@@ -1,7 +1,7 @@
 html<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
+<!-- saved from url=(0063)file:///C:/Users/Administrator/Downloads/huettenfux_3.html#home -->
+<html lang="de"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Der Hüttenfux - Obertennhütte &amp; Obertennhof</title>
     <style>
@@ -134,6 +134,17 @@ html<!DOCTYPE html>
             pointer-events: none;
         }
 
+        .jag-h {
+            height: 26px;
+            margin-top: -14px;
+            margin-bottom: -12px;
+            position: relative;
+            z-index: 3;
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iMCAwIDYwIDMwIj4KPHBvbHlnb24gZmlsbD0id2hpdGUiIHBvaW50cz0iMCwxMCA4LDMgMTUsMTMgMjIsNSAzMCwxNSAzOCw2IDQ1LDE0IDUxLDQgNjAsMTAgNjAsMjAgNTIsMjYgNDUsMTggMzgsMjUgMzAsMTcgMjIsMjQgMTUsMTYgOCwyMyAwLDIwIi8+Cjwvc3ZnPg==");
+            background-repeat: repeat-x;
+            background-size: 34px 26px;
+        }
+
         .banner-red {
             background: linear-gradient(180deg, var(--bg-red) 0%, var(--bg-red-dark) 100%);
             padding: 22px 20px 20px 20px;
@@ -218,12 +229,25 @@ html<!DOCTYPE html>
             flex-shrink: 0;
         }
 
+        .jag-v {
+            width: 24px;
+            margin-left: -12px;
+            margin-right: -12px;
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDMwIDYwIj4KPHBvbHlnb24gZmlsbD0id2hpdGUiIHBvaW50cz0iMTAsMCAzLDggMTMsMTUgNSwyMiAxNSwzMCA2LDM4IDE0LDQ1IDQsNTIgMTAsNjAgMjAsNjAgMjYsNTIgMTgsNDUgMjUsMzggMTcsMzAgMjQsMjIgMTYsMTUgMjMsOCAyMCwwIi8+Cjwvc3ZnPg==");
+            background-repeat: repeat-y;
+            background-size: 24px 34px;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 3;
+        }
+
         nav ul {
             list-style: none;
         }
 
         nav ul li a {
             display: block;
+            position: relative;
             padding: 11px 18px 11px 38px;
             color: #fff;
             text-decoration: none;
@@ -232,105 +256,75 @@ html<!DOCTYPE html>
             transition: 0.2s;
         }
 
-        .content-area {
+        nav ul li a::before {
+            content: '';
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            background-color: var(--text-gold);
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            background-color: rgba(255,255,255,0.1);
+            color: var(--text-gold);
+        }
+
+        nav ul li a:hover::before, nav ul li a.active::before {
+            opacity: 1;
+            background-color: var(--text-gold);
+        }
+
+        .content-section {
             flex: 1;
-            padding: 40px;
+            padding: 35px 40px;
             background-color: #fff;
+            display: none;
         }
 
-        .content-area h2 {
+        .content-section.active {
+            display: block;
+        }
+
+        .content-section h2 {
+            font-family: Georgia, serif;
             font-size: 28px;
-            margin-bottom: 20px;
             color: var(--bg-dark-blue);
+            margin-bottom: 8px;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 10px;
         }
 
-        .content-area p {
+        .content-section h3 {
+            font-size: 18px;
+            color: var(--bg-red-dark);
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+
+        .content-section p {
             font-size: 15px;
             line-height: 1.6;
-            margin-bottom: 20px;
+            color: #444;
+            margin-bottom: 15px;
+            text-align: justify;
         }
 
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 15px;
+            margin: 25px 0;
             background-color: var(--bg-light);
             padding: 20px;
-            border-radius: 4px;
-            margin-bottom: 30px;
+            border-radius: 6px;
+            border: 1px solid #e8e8e8;
         }
 
         .info-box {
-            border-left: 3px solid var(--bg-red);
-            padding-left: 10px;
-        }
-
-        .info-box .label {
-            font-size: 11px;
-            text-transform: uppercase;
-            font-weight: bold;
-            color: #777;
-        }
-
-        .info-box .value {
-            font-size: 14px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .image-gallery img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-        }
-    </style>
-</head>
-<body>
-
-<div id="wrapper">
-    <div class="flag-stripe">
-        <div class="r1"></div><div class="w1"></div><div class="r2"></div>
-    </div>
-
-    <header>
-        <div class="lang-switch">
-            <div class="flag-icon active flag-de"><div class="swatch"><span class="b1"></span><span class="b2"></span><span class="b3"></span></div><span class="label">DE</span></div>
-            <div class="flag-icon flag-en"><div class="swatch"><span class="b1"></span><span class="b2"></span><span class="b3"></span></div><span class="label">EN</span></div>
-        </div>
-        <div class="header-title">
-            <h1>Der Hüttenfux</h1>
-            <p>Unser Pinzgau</p>
-        </div>
-    </header>
-
-    <div class="banner-red">
-        <div class="region-card">
-            <div class="region-title">Zell am See</div>
-            <a class="region-link" href="#zell">
-                <img src="Zell am See.Wiki.jpeg" alt="Zell am See">
-            </a>
-            <div class="region-text">Der malerische Zeller See, die charmante Altstadt und die Bergwelt der Schmittenhöhe.</div>
-            <a class="region-arrow" href="#zell">Mehr erfahren &raquo;</a>
-        </div>
-        <div class="region-card">
-            <div class="region-title">Saalbach Hinterglemm</div>
-            <a class="region-link" href="#saalbach">
-                <img src="Saalbach hinterglemm above.JPG" alt="Saalbach Hinterglemm">
-            </a>
-            <div class="region-text">270 Pistenkilometer im Winter, 400km Wanderwege im Sommer – das Skicircus Gebiet.</div>
-            <a class="region-arrow" href="#saalbach">Mehr erfahren &raquo;</a>
-        </div>
-        <div class="region-card">
-            <div class="region-title">Obertennhof &amp; Hütte</div>
-            <a class="region-link" href="#unterkunft">
-                <img src="heb-sbg-5-06d7791e.jpg" alt="Obertennhütte">
-            </a>
+            background-color: #fff;
+Verwende Code mit Vorsicht.padding: 12px 15px;border-radius: 4px;border-left: 4px solid var(--bg-red);box-shadow: 0 2px 4px rgba(0,0,0,0.04);}.info-box .label {font-size: 11px;text-transform: uppercase;color: #777;font-weight: bold;letter-spacing: 0.5px;margin-bottom: 3px;}.info-box .value {font-size: 15px;font-weight: bold;color: var(--bg-dark-blue);}.gallery-grid {display: grid;grid-template-columns: repeat(2, 1fr);gap: 15px;margin-top: 25px;}.gallery-grid img {width: 100%;height: 220px;object-fit: cover;border-radius: 4px;border: 1px solid #ddd;box-shadow: 0 2px 5px rgba(0,0,0,0.1);cursor: pointer;transition: 0.2s;}.gallery-grid img:hover {transform: scale(1.02);box-shadow: 0 4px 10px rgba(0,0,0,0.15);}footer {background-color: var(--bg-dark-blue);color: rgba(255,255,255,0.7);padding: 20px;text-align: center;font-size: 13px;margin-top: auto;border-top: 3px solid var(--bg-red);}@media (max-width: 900px) {.main-container { flex-direction: column; }nav { width: 100%; padding: 10px 0; }nav ul { display: flex; flex-wrap: wrap; justify-content: center; }nav ul li a { padding: 8px 15px 8px 25px; }.jag-v { display: none; }}Der HüttenfuxObertennhütte & ObertennhofZell am SeeDer malerische Zeller See, die charmante Altstadt und die Bergwelt der Schmittenhöhe.Mehr erfahren »Saalbach Hinterglemm270 Pistenkilometer im Winter, 400km Wanderwege im Sommer – das Skicircus Gebiet.Mehr erfahren »Obertennhof & HütteUnsere zwei Unterkünfte in absoluter Alleinlage über Viehhofen – urig, ruhig und mit Bergblick.Mehr erfahren »HomeOBERTENNHÜTTE• Die Hütte• Die ZimmerOBERTENNHOF• Der HofUMGEBUNGHerzlich Willkommen beim Hüttenfux!Erleben Sie unvergessliche Tage im Herzen des Pinzgaus. Unsere beiden Unterkünfte, die urige Obertennhütte und der traditionelle Obertennhof, bieten Ihnen die perfekte Mischung aus Ruhe, Natur und Tiroler Gastfreundschaft.Gelegen am sonnigen Hang über Viehhofen, direkt zwischen den weltbekannten Urlaubsregionen Zell am See-Kaprun und Saalbach Hinterglemm, sind wir der ideale Ausgangspunkt für Wanderungen, Skivergnügen oder einfach zum Seele baumeln lassen.Wählen Sie Ihre Unterkunft:Klicken Sie im Menü auf die Obertennhütte für einen Urlaub im eigenen Almhaus mit bis zu 10 Personen, oder auf den Obertennhof für gemütliche Stunden auf unserem traditionellen Bergbauernhof.Über die ObertennhütteIn absoluter Alleinlage am Sonnenhang, etwa 3km über dem Ort Viehhofen im Skigebiet Saalbach-Hinterglemm gelegen. Im Sommer weiden Schafe und Pferde auf der Alm nebenan.Personenbis 10Wohnfläche100 m²Seehöhe1.225 mZimmer3 Doppel-, 1 ZweibettzimmerDie Hütte wurde vom Hüttenbesitzer selbst mit viel persönlichem Einsatz gebaut: Hüttenstube mit Couchecke und SAT-TV, Küchenzeile mit E-Herd, Backofen, Holzherd, Kühlschrank, Mikrowelle, Geschirrspüler und Kaffeemaschine. Kostenloses WLAN und Holzzentralheizung vorhanden.Impressionen der HütteWerfen Sie einen Blick auf die traditionelle Bauweise und die traumhafte Umgebung der Obertennhütte. Vor der Hütte erwartet Sie ein sonniger Sitzplatz mit Liegestühlen, Griller und herrlicher Aussicht.Die gemütlichen InnenräumeHolz sorgt für die typische, gemütliche Hüttenatmosphäre. Genießen Sie gesellige Abende in der großen Stube oder kochen Sie gemeinsam in der voll ausgestatteten Küche.Der ObertennhofErleben Sie Urlaub auf einem echten, traditionsreichen Bergbauernhof. Unser Hof wird liebevoll bewirtschaftet und bietet Ihnen einen authentischen Einblick in das Landleben im Pinzgau.BesonderheitFamilienfreundlichHofprodukteFrische Milch & EierIdeal für Familien mit Kindern, die die Tiere hautnah erleben möchten und die Natur ungestört entdecken wollen.Bilder vom HoflebenUnser Hof bietet zu jeder Jahreszeit einen herrlichen Rückzugsort. Genießen Sie die hofeigene Atmosphäre und das Panorama über das Tal.Die Urlaubsregion PinzgauViehhofen liegt strategisch perfekt. In nur wenigen Minuten erreichen Sie das weltbekannte Skigebiet Saalbach Hinterglemm Leogang Fieberbrunn sowie die wunderschöne Bergstadt Zell am See mit dem glasklaren Zeller See.Sommeraktivitäten:Wandern, Mountainbiken, Schwimmen im See, Klettern oder Ausflüge zum Großglockner und den Krimmler Wasserfällen.Winteraktivitäten:Skifahren und Snowboarden in zwei der besten Skigebiete Österreichs, Winterwandern, Rodeln oder Langlaufen.© 2026 Der Hüttenfux - Familie Neumayer - Viehhofen, Österreich// Navigation Logikconst navLinks = document.querySelectorAll('.nav-item');const sections = document.querySelectorAll('.content-section');navLinks.forEach(link => {link.addEventListener('click', function(e) {e.preventDefault();const targetSection = this.getAttribute('data-section');navLinks.forEach(l => l.classList.remove('active'));sections.forEach(s => s.classList.remove('active'));this.classList.add('active');document.getElementById('section-' + targetSection).classList.add('active');window.scrollTo({ top: document.querySelector('.main-container').offsetTop - 20, behavior: 'smooth' });});});// Sprach-Ubersetzungs-Datenconst translations = {de: {"header-title": "Der Hüttenfux","header-subtitle": "Obertennhütte & Obertennhof","banner-zell": "Der malerische Zeller See, die charmante Altstadt und die Bergwelt der Schmittenhöhe.","banner-saalbach": "270 Pistenkilometer im Winter, 400km Wanderwege im Sommer – das Skicircus Gebiet.","banner-title-unterkunft": "Obertennhof & Hütte","banner-unterkunft": "Unsere zwei Unterkünfte in absoluter Alleinlage über Viehhofen – urig, ruhig und mit Bergblick.","more-info": "Mehr erfahren »","nav-home": "Home","nav-huette": "OBERTENNHÜTTE","nav-diehuette": "• Die Hütte","nav-diezimmer": "• Die Zimmer","nav-hof": "OBERTENNHOF","nav-derhof": "• Der Hof","nav-umgebung": "UMGEBUNG","home-title": "Herzlich Willkommen beim Hüttenfux!","home-p1": "Erleben Sie unvergessliche Tage im Herzen des Pinzgaus. Unsere beiden Unterkünfte, die urige Obertennhütte und der traditionelle Obertennhof, bieten Ihnen die perfekte Mischung aus Ruhe, Natur und Tiroler Gastfreundschaft.","home-p2": "Gelegen am sonnigen Hang über Viehhofen, direkt zwischen den weltbekannten Urlaubsregionen Zell am See-Kaprun und Saalbach Hinterglemm, sind wir der ideale Ausgangspunkt für Wanderungen, Skivergnügen oder einfach zum Seele baumeln lassen.","home-h3": "Wählen Sie Ihre Unterkunft:","home-p3": "Klicken Sie im Menü auf die Obertennhütte für einen Urlaub im eigenen Almhaus mit bis zu 10 Personen, oder auf den Obertennhof für gemütliche Stunden auf unserem traditionellen Bergbauernhof.","huette-title": "Über die Obertennhütte","huette-p1": "In absoluter Alleinlage am Sonnenhang, etwa 3km über dem Ort Viehhofen im Skigebiet Saalbach-Hinterglemm gelegen. Im Sommer weiden Schafe und Pferde auf der Alm nebenan.","lbl-personen": "Personen","lbl-flaeche": "Wohnfläche","lbl-seehoehe": "Seehöhe","lbl-zimmer": "Zimmer","val-zimmer": "3 Doppel-, 1 Zweibettzimmer","huette-p2": "Die Hütte wurde vom Hüttenbesitzer selbst mit viel persönlichem Einsatz gebaut: Hüttenstube mit Couchecke und SAT-TV, Küchenzeile mit E-Herd, Backofen, Holzherd, Kühlschrank, Mikrowelle, Geschirrspüler und Kaffeemaschine. Kostenloses WLAN und Holzzentralheizung vorhanden.","diehuette-title": "Impressionen der Hütte","diehuette-p1": "Werfen Sie einen Blick auf die traditionelle Bauweise und die traumhafte Umgebung der Obertennhütte. Vor der Hütte erwartet Sie ein sonniger Sitzplatz mit Liegestühlen, Griller und herrlicher Aussicht.","zimmer-title": "Die gemütlichen Innenräume","zimmer-p1": "Holz sorgt für die typische, gemütliche Hüttenatmosphäre. Genießen Sie gesellige Abende in der großen Stube oder kochen Sie gemeinsam in der voll ausgestatteten Küche.","hof-title": "Der Obertennhof","hof-p1": "Erleben Sie Urlaub auf einem echten, traditionsreichen Bergbauernhof. Unser Hof wird liebevoll bewirtschaftet und bietet Ihnen einen authentischen Einblick in das Landleben im Pinzgau.","lbl-lage": "Besonderheit","val-hof-bes": "Familienfreundlich","lbl-produkte": "Hofprodukte","val-hof-prod": "Frische Milch & Eier","hof-p2": "Ideal für Familien mit Kindern, die die Tiere hautnah erleben möchten und die Natur ungestört entdecken wollen.","derhof-title": "Bilder vom Hofleben","derhof-p1": "Unser Hof bietet zu jeder Jahreszeit einen herrlichen Rückzugsort. Genießen Sie die hofeigene Atmosphäre und das Panorama über das Tal.","umgebung-title": "Die Urlaubsregion Pinzgau","umgebung-p1": "Viehhofen liegt strategisch perfekt. In nur wenigen Minuten erreichen Sie das weltbekannte Skigebiet Saalbach Hinterglemm Leogang Fieberbrunn sowie die wunderschöne Bergstadt Zell am See mit dem glasklaren Zeller See.","umgebung-p2": "Wandern, Mountainbiken, Schwimmen im See, Klettern oder Ausflüge zum Großglockner und den Krimmler Wasserfällen.","umgebung-p3": "Skifahren und Snowboarden in zwei der besten Skigebiete Österreichs, Winterwandern, Rodeln oder Langlaufen."},en: {"header-title": "The Hüttenfux","header-subtitle": "Obertennhütte & Obertennhof","banner-zell": "The picturesque Lake Zell, the charming old town and the mountains of the Schmittenhöhe.","banner-saalbach": "270 kilometers of slopes in winter, 400km of hiking trails in summer – the Skicircus area.","banner-title-unterkunft": "Obertennhof & Cabin","banner-unterkunft": "Our two accommodations in an absolute secluded location above Viehhofen – rustic, quiet and with mountain views.","more-info": "Learn more »","nav-home": "Home","nav-huette": "OBERtENNHÜTTE CABIN","nav-diehuette": "• The Cabin","nav-diezimmer": "• The Rooms","nav-hof": "OBERTENNHOF FARM","nav-derhof": "• The Farm","nav-umgebung": "SURROUNDINGS","home-title": "Welcome to Hüttenfux!","home-p1": "Experience unforgettable days in the heart of Pinzgau. Our two accommodations, the rustic Obertennhütte and the traditional Obertennhof, offer you the perfect mix of peace, nature and Tyrolean hospitality.","home-p2": "Located on the sunny slope above Viehhofen, right between the world-famous holiday regions of Zell am See-Kaprun and Saalbach Hinterglemm, we are the ideal starting point for hiking, skiing pleasure or simply unwinding.","home-h3": "Choose your accommodation:","home-p3": "Click on Obertennhütte in the menu for a holiday in your own alpine house for up to 10 people, or on Obertennhof for cozy hours on our traditional mountain farm.","huette-title": "About the Obertennhütte","huette-p1": "In an absolute secluded location on the sunny slope, located about 3km above the village of Viehhofen in the Saalbach-Hinterglemm ski area. In summer, sheep and horses graze on the alpine pasture next door.","lbl-personen": "Guests","lbl-flaeche": "Living Space","lbl-seehoehe": "Altitude","lbl-zimmer": "Rooms","val-zimmer": "3 double, 1 twin room","huette-p2": "The cabin was built by the cabin owner himself with a lot of personal commitment: cabin parlor with couch corner and SAT-TV, kitchenette with electric stove, oven, wood stove, refrigerator, microwave, dishwasher and coffee machine. Free Wi-Fi and wood central heating available.","diehuette-title": "Impressions of the Cabin","diehuette-p1": "Take a look at the traditional construction and the fantastic surroundings of the Obertennhütte. In front of the cabin a sunny sitting area with deck chairs, barbecue and a wonderful view awaits you.","zimmer-title": "The Cozy Interiors","zimmer-p1": "Wood creates the typical, cozy cabin atmosphere. Enjoy social evenings in the large parlor or cook together in the fully equipped kitchen.","hof-title": "The Obertennhof","hof-p1": "Experience a holiday on a real, traditional mountain farm. Our farm is lovingly managed and offers you an authentic insight into country life in Pinzgau.","lbl-lage": "Special Feature","val-hof-bes": "Family friendly","lbl-produkte": "Farm Products","val-hof-prod": "Fresh milk & eggs","hof-p2": "Ideal for families with children who want to experience the animals up close and discover nature undisturbed.","derhof-title": "Pictures of Farm Life","derhof-p1": "Our farm offers a wonderful retreat in every season. Enjoy the farm's own atmosphere and the panorama over the valley.","umgebung-title": "The Pinzgau Holiday Region","umgebung-p1": "Viehhofen is strategically perfectly located. In just a few minutes you can reach the world-famous ski area Saalbach Hinterglemm Leogang Fieberbrunn as well as the beautiful mountain town of Zell am See with the crystal clear Lake Zell.","umgebung-p2": "Hiking, mountain biking, swimming in the lake, climbing or excursions to the Grossglockner and the Krimml Waterfalls.","umgebung-p3": "Skiing and snowboarding in two of the best ski areas in Austria, winter hiking, tobogganing or cross-country skiing."}};const flagIcons = document.querySelectorAll('.flag-icon');flagIcons.forEach(icon => {icon.addEventListener('click', function() {const lang = this.getAttribute('data-lang');flagIcons.forEach(i => i.classList.remove('active'));this.classList.add('active');document.querySelectorAll('[data-key]').forEach(element => {const key = element.getAttribute('data-key');if(translations[lang][key]) {element.innerHTML = translations[lang][key];}});});});
