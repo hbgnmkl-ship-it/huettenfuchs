@@ -1,4 +1,4 @@
-html<!DOCTYPE html>
+hhtml<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -134,17 +134,6 @@ html<!DOCTYPE html>
             pointer-events: none;
         }
 
-        .jag-h {
-            height: 26px;
-            margin-top: -14px;
-            margin-bottom: -12px;
-            position: relative;
-            z-index: 3;
-            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iMCAwIDYwIDMwIj4KPHBvbHlnb24gZmlsbD0id2hpdGUiIHBvaW50cz0iMCwxMCA4LDMgMTUsMTMgMjIs5...[gekürzt]...");
-            background-repeat: repeat-x;
-            background-size: 34px 26px;
-        }
-
         .banner-red {
             background: linear-gradient(180deg, var(--bg-red) 0%, var(--bg-red-dark) 100%);
             padding: 22px 20px 20px 20px;
@@ -211,6 +200,10 @@ html<!DOCTYPE html>
             border-radius: 20px;
             padding: 5px 14px;
             transition: 0.2s;
+        }
+        .region-card .region-arrow:hover {
+            background: var(--text-gold);
+            color: var(--bg-red-dark);
         }
 
         .main-container {
@@ -317,11 +310,7 @@ html<!DOCTYPE html>
             <h1>Der Hüttenfux</h1>
             <p>Unser Pinzgau</p>
         </div>
-        <!-- Platzhalter falls das Fux-Logo fehlt, ansonsten wird die hochgeladene Datei geladen -->
-        <img class="fox-mascot" src="fux.png" alt="Hüttenfux Logo" onerror="this.style.display='none'">
     </header>
-
-    <div class="jag-h"></div>
 
     <div class="banner-red">
         <div class="region-card">
@@ -334,3 +323,14 @@ html<!DOCTYPE html>
         </div>
         <div class="region-card">
             <div class="region-title">Saalbach Hinterglemm</div>
+            <a class="region-link" href="#saalbach">
+                <img src="Saalbach hinterglemm above.JPG" alt="Saalbach Hinterglemm">
+            </a>
+            <div class="region-text">270 Pistenkilometer im Winter, 400km Wanderwege im Sommer – das Skicircus Gebiet.</div>
+            <a class="region-arrow" href="#saalbach">Mehr erfahren &raquo;</a>
+        </div>
+        <div class="region-card">
+            <div class="region-title">Obertennhof &amp; Hütte</div>
+            <a class="region-link" href="#unterkunft">
+                <img src="heb-sbg-5-06d7791e.jpg" alt="Obertennhütte">
+            </a>
